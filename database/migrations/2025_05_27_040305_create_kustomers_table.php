@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->bigInteger('nik');
             $table->string('name');
-            $table->bigInteger('telp');
+            $table->string('telp');
             $table->string('email');
             $table->string('alamat');
             $table -> timestamps();
