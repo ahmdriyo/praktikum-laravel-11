@@ -9,6 +9,9 @@
         <div class="card mb-4">
             <div class="card-body">
                 <a href="{{ route('kategoris.create') }}" class="btn btn-md btn-success mb-3">ADD kategori</a>
+                <div class="float-end">
+                    <a href="{{ route('printkategori') }}" class="btn btn-md btn-warning mb-3 ml-3">PRINT kategori</a>
+                </div>
                 <div class="row">
                     <table class="table table-bordered data-table">
                         <thead>

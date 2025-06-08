@@ -8,6 +8,10 @@
     </ol>
     <div class="card mb-4">
     <div class="card-header">
+      <div class="float-end">
+        <a href="{{ route('printuser') }}" class="btn btn-md btn-warning mb-3 ml-3">PRINT USER</a>
+        <a href="{{ route('exportuser') }}" class="btn btn-md btn-danger mb-3 ml-2">Export USER</a>
+      </div>
     </div>
     <div class="card-body">
       <div class="row">

@@ -8,8 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Contracts\View\View;
 use Illuminate\Support\Facades\Storage;
-
-
+use Barryvdh\DomPDF\Facade\Pdf;
 class ProductController extends Controller
 {
     //
@@ -106,5 +105,18 @@ class ProductController extends Controller
         $product->delete();
         return redirect()->route('products.index')->with(['success' => "Data berhasil di hapus!"]);
 
+    }
+
+    public function printPDF()
+    {
+        $products = Product::get();
+        $data = [
+            'title' => 'Welcome To fti.uniska-bjm.ac.id',
+            'date' => date('m/d/Y'),
+            'products' => $products
+        ];
+        $pdf = PDF::loadview('printProductPdf', $data);
+        $pdf->setPaper('A4', 'landscape');
+        return $pdf->stream('Data Product.pdf', array("attachment" => false));
     }
 }
